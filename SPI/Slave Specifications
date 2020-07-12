@@ -1,6 +1,6 @@
 
-Memory = 1 Byte
-Spi_Mode = 0
+MEMORY = 1 BYTE
+SPI_MODE = 0
 
 STATES USED    |
 ---------------|
@@ -9,7 +9,24 @@ STATES USED    |
 ---> RECEIVE   |
                |
 ---> SEND      |
+---------------------------------------------------
+Data bits recevied in order --> MSB 1st ---- LSB  |
+                                                  |
+Data bits sent in order --> LSB 1st --- MSB       |
+---------------------------------------------------
 
-Data bits recevied in order --> MSB 1st ---- LSB 
+PINS SPECIFICATIONS
+--------------------
 
-Data bits sent in order --> LSB 1st --- MSB
+INPUT PINS --->
+
+--> mosi - 1 bit
+--> sclk - 1 bit
+--> ssel - 1 bit
+--> rd_wr - 1 bit // rd_wr = 1 for writing data into slave
+                  // rd_wr = 0 for reading data from slave
+OUTPUT PIN
+----------
+
+--> miso - 1 bit
+  
