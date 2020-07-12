@@ -1,0 +1,15 @@
+
+Memory = 1 Byte
+Spi_Mode = 0
+
+STATES USED    |
+---------------|
+---> IDLE      |
+               | 
+---> RECEIVE   |
+               |
+---> SEND      |
+
+Data bits recevied in order --> MSB 1st ---- LSB 
+
+Data bits sent in order --> LSB 1st --- MSB
