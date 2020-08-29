@@ -11,7 +11,18 @@ class driver;
   function new(mailbox gen2driv, virtual intf vif);
     this.vif = vif;
     this.gen2driv = gen2driv;
+    this.cg = new();
   endfunction
+
+  covergroup cg @(posedge vif.sclk);
+        MISO :coverpoint trans.miso;
+    
+        MOSI :coverpoint trans.mosi;
+    
+    	RD_WR:coverpoint trans.rd_wr;
+    
+      endgroup: cg
+  
   
   task reset;
     $display("Reset started");
