@@ -1,0 +1,34 @@
+MEMORY = 1 BYTE
+SPI_MODE = 0
+
+STATES USED    |
+---------------|
+---> IDLE      |
+               | 
+---> RECEIVE   |
+               |
+---> SEND      |
+---------------------------------------------------
+Data bits recevied in order --> MSB 1st ---- LSB  |
+                                                  |
+Data bits sent in order --> LSB 1st --- MSB       |
+---------------------------------------------------
+
+PINS SPECIFICATIONS
+--------------------
+
+INPUT PINS --->
+
+--> mosi - 1 bit
+--> sclk - 1 bit
+--> ssel - 1 bit
+
+OUTPUT PIN
+----------
+
+--> miso - 1 bit
+
+//MOSI = 1 --> RECEIVE
+After recieving 8 bits --> IDLE
+//MOSI = 0 --> SEND  
+ After sending 8 bits --> IDLE
